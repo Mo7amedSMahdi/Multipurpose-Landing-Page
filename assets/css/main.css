@@ -1,1 +1,534 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap");
+/* Fonts-Family */
+/* Colors */
+/*-----------------*/
+/* RESET */
+/*----------------*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default link style */
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default button styles */
+button,
+input[type=submit],
+input[type=reset] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Utility classes */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.aligen-items-center {
+  align-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.container {
+  padding-inline: 2em;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.nav {
+  display: inline-flex;
+  gap: 1rem;
+  flex-direction: column;
+  list-style: none;
+}
+
+.active {
+  color: #ff5300;
+}
+
+.bg--light {
+  background-color: #fff7f4;
+}
+
+.btn {
+  padding: 0.8rem 1.25rem;
+  margin: 0;
+  background-color: transparent;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+}
+
+.btn--primary {
+  background-color: #ff5300;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 123.6%;
+  text-align: center;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(4px 5px 15px rgba(255, 83, 0, 0.4));
+}
+
+.button-outlined {
+  border: 1px solid;
+  border-color: var(--clr-bordered-btn, #fff);
+  border-radius: 10px;
+  color: var(--clr-bordered-btn-text, #fff);
+  font-family: var(--ff-inter);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 14px 27px;
+}
+
+.section__title {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  align-items: center;
+}
+.section__title p {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  text-align: center;
+  color: #7b7b7b;
+}
+.section__title h2 {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 123.6%;
+  text-align: center;
+  color: #373737;
+  max-width: min(80%, 16.375rem);
+}
+.section__title h2 span {
+  color: #ff5300;
+}
+
+.paragraph {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  text-align: center;
+  color: #7b7b7b;
+}
+
+/*-----------------*/
+/* icons */
+/*----------------*/
+.icon {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+
+.icon-menu {
+  content: url(../images/icons/ico-menu.svg);
+}
+
+/*-----------------*/
+/* Header */
+/*----------------*/
+header {
+  background-color: #ffffff;
+}
+
+.nav__container {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+}
+.nav__main {
+  display: none;
+}
+.nav__brand img {
+  max-width: min(75%, 102px);
+}
+
+/*-----------------*/
+/* Hero Section */
+/*----------------*/
+.hero {
+  flex-direction: column-reverse;
+  padding: 3.125rem 1.25rem;
+  --gap: 3.125rem;
+}
+.hero__body {
+  flex-direction: column;
+  --gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.hero__body h1 {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 123.6%;
+  text-align: center;
+  color: #373737;
+}
+.hero__body h1 span {
+  color: #ff5300;
+}
+.hero__body p {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  text-align: center;
+  color: #7b7b7b;
+  width: 90%;
+}
+
+/*-----------------*/
+/* About Section */
+/*----------------*/
+.about {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+}
+.about__body {
+  --gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.about__body button {
+  margin-top: 0.8rem;
+}
+.about__body__services {
+  --gap: 1.5rem;
+}
+
+.service {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2.8rem;
+  gap: 2.3rem;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.service__orang {
+  background: #ff5300;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
+}
+.service__gray {
+  padding: 1rem;
+  border-radius: 50%;
+  background: #7b7b7b;
+  box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.service__blue {
+  padding: 1rem;
+  border-radius: 50%;
+  background: #00acff;
+  box-shadow: 4px 5px 15px rgba(0, 194, 255, 0.4);
+}
+.service__black {
+  padding: 1rem;
+  border-radius: 50%;
+  background: #373737;
+  box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.service p {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 123.6%;
+  text-align: center;
+  color: #373737;
+}
+
+/*-----------------*/
+/* Expereince Section */
+/*----------------*/
+.expereince {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+}
+.expereince__body {
+  --gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.expereince__body button {
+  margin-top: 0.8rem;
+}
+.expereince__counters {
+  width: 100%;
+}
+.expereince__counters .counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.125rem;
+  max-width: max(25%, 21.438rem);
+  background: #ffffff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 4.438rem 1rem;
+}
+.expereince__counters .counter h3 {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 123.6%;
+  text-transform: capitalize;
+  color: #373737;
+}
+.expereince__counters .counter p {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 123.6%;
+  color: #7b7b7b;
+}
+
+/*-----------------*/
+/* Our Team Section */
+/*----------------*/
+.team {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+}
+.team__members {
+  --gap: 1rem;
+}
+.team .member {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: #ffffff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 1rem;
+}
+.team .member__details {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.team .member__details h3 {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 123.6%;
+  color: #373737;
+}
+.team .member__details p {
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  color: #7b7b7b;
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*/
+.work {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+}
+.work__portfolio {
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+}
+.work__portfolio .portfolio__header .nav {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.work__portfolio .portfolio__content {
+  display: none;
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*/
+.feedback {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+}
+.feedback__cards {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.feedback__cards .feedback {
+  background: #ff5300;
+  color: #ffffff;
+  width: 90%;
+  padding: 1.5rem 1rem;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(4px 5px 15px rgba(255, 83, 0, 0.4));
+}
+.feedback__cards .feedback__image {
+  position: absolute;
+  margin-left: -15%;
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+  border-radius: 50%;
+}
+.feedback__cards .feedback__body {
+  margin-left: 2.5rem;
+  --gap: 0.5rem;
+}
+.feedback__cards .feedback__body h3 {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  text-align: start;
+  color: #ffffff;
+}
+.feedback__cards .feedback__body p {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 123.6%;
+  text-align: start;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*//*# sourceMappingURL=main.css.map */

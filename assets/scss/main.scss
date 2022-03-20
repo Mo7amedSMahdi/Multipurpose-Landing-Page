@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Fonts-Family */
+$ff-poppins: 'Poppins', sans-serif;
+$ff-work-sans: 'Work Sans', sans-serif;
+
+/* Colors */
+$clr-orang: #ff5300;
+$clr-orang-bg: #fff7f4;
+$clr-black: #373737;
+$clr-dark-bg: #18191a;
+$clr-dark-view: #242526;
+$clr-dark-view-2: #3a3b3c;
+$clr-gray: #7b7b7b;
+$clr-white: #ffffff;
+$clr-blue: #00acff;
+
+/*-----------------*/
+/* RESET */
+/*----------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default link style */
+a {
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: $ff-poppins;
+  font-size: 1rem;
+  background-color: $clr-white;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default button styles */
+button,
+input[type='submit'],
+input[type='reset'] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes */
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.aligen-items-center {
+  align-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.container {
+  padding-inline: 2em;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.nav {
+  display: inline-flex;
+  gap: 1rem;
+  flex-direction: column;
+  list-style: none;
+}
+
+.active {
+  color: $clr-orang;
+}
+
+.bg--light {
+  background-color: $clr-orang-bg;
+}
+
+.btn {
+  padding: 0.8rem 1.25rem;
+  margin: 0;
+  background-color: transparent;
+  text-align: center;
+  border: 0;
+  border-radius: 0;
+}
+
+.btn--primary {
+  background-color: $clr-orang;
+  border-radius: 0.4rem;
+  color: $clr-white;
+  font-family: $ff-work-sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 123.6%;
+  text-align: center;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(4px 5px 15px rgba(255, 83, 0, 0.4));
+}
+
+.button-outlined {
+  border: 1px solid;
+  border-color: var(--clr-bordered-btn, #fff);
+  border-radius: 10px;
+  color: var(--clr-bordered-btn-text, #fff);
+  font-family: var(--ff-inter);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 14px 27px;
+}
+
+.section__title {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  align-items: center;
+
+  p {
+    font-family: $ff-work-sans;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150.6%;
+    text-align: center;
+    color: $clr-gray;
+  }
+  h2 {
+    font-family: $ff-work-sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 123.6%;
+    text-align: center;
+    color: $clr-black;
+    max-width: min(80%, 16.375rem);
+    span {
+      color: $clr-orang;
+    }
+  }
+}
+
+.paragraph {
+  font-family: $ff-work-sans;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150.6%;
+  text-align: center;
+  color: $clr-gray;
+}
+
+/*-----------------*/
+/* icons */
+/*----------------*/
+.icon {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+}
+
+.icon-menu {
+  content: url(../images/icons/ico-menu.svg);
+}
+
+/*-----------------*/
+/* Header */
+/*----------------*/
+
+header {
+  background-color: $clr-white;
+}
+
+.nav {
+  &__container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+  }
+
+  &__main {
+    display: none;
+  }
+
+  &__brand img {
+    max-width: min(75%, 102px);
+  }
+}
+
+/*-----------------*/
+/* Hero Section */
+/*----------------*/
+
+.hero {
+  flex-direction: column-reverse;
+  padding: 3.125rem 1.25rem;
+  --gap: 3.125rem;
+  &__body {
+    flex-direction: column;
+    --gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-family: $ff-work-sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 1.9rem;
+      line-height: 123.6%;
+      text-align: center;
+      color: $clr-black;
+
+      span {
+        color: $clr-orang;
+      }
+    }
+
+    p {
+      font-family: $ff-work-sans;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 150.6%;
+      text-align: center;
+      color: $clr-gray;
+      width: 90%;
+    }
+  }
+}
+
+/*-----------------*/
+/* About Section */
+/*----------------*/
+
+.about {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+
+  &__body {
+    --gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-top: 0.8rem;
+    }
+
+    &__services {
+      --gap: 1.5rem;
+    }
+  }
+}
+
+.service {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2.8rem;
+  gap: 2.3rem;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+
+  &__orang {
+    background: $clr-orang;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 4px 5px 15px rgba(255, 83, 0, 0.4);
+  }
+
+  &__gray {
+    padding: 1rem;
+    border-radius: 50%;
+    background: $clr-gray;
+    box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  &__blue {
+    padding: 1rem;
+    border-radius: 50%;
+    background: $clr-blue;
+    box-shadow: 4px 5px 15px rgba(0, 194, 255, 0.4);
+  }
+
+  &__black {
+    padding: 1rem;
+    border-radius: 50%;
+    background: $clr-black;
+    box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  p {
+    font-family: $ff-work-sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 123.6%;
+    text-align: center;
+    color: $clr-black;
+  }
+}
+
+/*-----------------*/
+/* Expereince Section */
+/*----------------*/
+
+.expereince {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+
+  &__body {
+    --gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-top: 0.8rem;
+    }
+  }
+  &__counters {
+    width: 100%;
+
+    .counter {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.125rem;
+      max-width: max(25%, 21.438rem);
+      background: $clr-white;
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+      padding: 4.438rem 1rem;
+
+      h3 {
+        font-family: $ff-work-sans;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3rem;
+        line-height: 123.6%;
+        text-transform: capitalize;
+        color: $clr-black;
+      }
+
+      p {
+        font-family: $ff-work-sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 123.6%;
+        color: $clr-gray;
+      }
+    }
+  }
+}
+
+/*-----------------*/
+/* Our Team Section */
+/*----------------*/
+
+.team {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+
+  &__members {
+    --gap: 1rem;
+  }
+
+  .member {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    background: $clr-white;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+
+    &__details {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      h3 {
+        font-family: $ff-work-sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.25rem;
+        line-height: 123.6%;
+        color: $clr-black;
+      }
+
+      p {
+        font-family: 'Work Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 150.6%;
+        color: $clr-gray;
+      }
+    }
+  }
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*/
+
+.work {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+
+  &__portfolio {
+    --gap: 3.125rem;
+    justify-content: center;
+    align-items: center;
+
+    .portfolio__header .nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .portfolio__content {
+      display: none;
+    }
+  }
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*/
+
+.feedback {
+  padding: 3.125rem 1.5rem;
+  --gap: 3.125rem;
+  justify-content: center;
+  align-items: center;
+
+  &__cards {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .feedback {
+      background: $clr-orang;
+      color: $clr-white;
+      width: 90%;
+      padding: 1.5rem 1rem;
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+      filter: drop-shadow(4px 5px 15px rgba(255, 83, 0, 0.4));
+
+      &__image {
+        position: absolute;
+        margin-left: -15%;
+        max-width: 3.5rem;
+        max-height: 3.5rem;
+        border-radius: 50%;
+      }
+
+      &__body {
+        margin-left: 2.5rem;
+        --gap: 0.5rem;
+
+        h3 {
+          font-family: $ff-work-sans;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 150.6%;
+          text-align: start;
+          color: $clr-white;
+        }
+
+        p {
+          font-family: $ff-work-sans;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.8rem;
+          line-height: 123.6%;
+          text-align: start;
+          text-transform: capitalize;
+          color: $clr-white;
+        }
+      }
+    }
+  }
+}
+
+/*-----------------*/
+/* Works Section */
+/*----------------*/
